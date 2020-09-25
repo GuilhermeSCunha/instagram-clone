@@ -110,3 +110,18 @@ header {
         }
     }
 }
+
+main {
+    @include simple-flex (flex-start, flex-start, row);
+    width: 100%;
+    max-width: 100%;
+    background-color: $background-primary;
+    flex-wrap: wrap;
+
+    .explore-img {
+        margin: 0.5px;
+        width: 123px;
+        height: 119px;
+        object-fit: cover;
+    }
+}

@@ -153,4 +153,21 @@ header .camera-icon {
   margin: 0 10px;
 }
 
+main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  width: 100%;
+  max-width: 100%;
+  background-color: #fafafa;
+  flex-wrap: wrap;
+}
+main .explore-img {
+  margin: 0.5px;
+  width: 123px;
+  height: 119px;
+  object-fit: cover;
+}
+
 /*# sourceMappingURL=search.css.map */
