@@ -1,0 +1,46 @@
+@import "../styles.scss";
+body {
+    height: 100%;
+}
+
+header {
+    padding: 8px 0 8px 8px;
+    position: sticky;
+    @include simple-flex (center, center, row);
+        .search-bar-container {
+            width: 327px;
+            height: 36px;
+            border-radius: 10px;
+            background-color: $background-secondary;
+            @include simple-flex ();
+            margin-right: 10px;
+
+            .search{
+                border: none;
+                background-color: transparent;
+                font-size: 16px;
+                height: 100%;
+                width: 90%;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .search-icon-container {
+                width: 10%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                padding-left: 11px;
+                .search-icon {
+                    width: 13px;
+                    height: auto;
+                }
+            }
+        }
+    .camera-icon {
+        width: 20px;
+        height: auto;
+    }
+}
