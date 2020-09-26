@@ -14,6 +14,7 @@ p {
   font-family: Arial;
 }
 
+html,
 body {
   max-width: 375px;
   margin: auto;
@@ -108,6 +109,8 @@ main .time-container .time-content .content {
   align-items: center;
   flex-direction: row;
   height: 60px;
+  max-width: 100%;
+  min-width: 343px;
 }
 main .time-container .time-content .content .profile-picture {
   width: 44px;
@@ -119,7 +122,7 @@ main .time-container .time-content .content .profile-picture {
 main .time-container .time-content .content .content-description {
   color: #262626;
   font-size: 13px;
-  width: 230px;
+  max-width: 230px;
 }
 main .time-container .time-content .content .content-description .spotlight-text {
   font-weight: 600;
@@ -127,11 +130,61 @@ main .time-container .time-content .content .content-description .spotlight-text
 main .time-container .time-content .content .content-description .time {
   color: rgba(0, 0, 0, 0.4);
 }
+main .time-container .time-content .content .content-description .mention {
+  color: #00327c;
+}
 main .time-container .time-content .content .post-picture {
   width: 44px;
   height: 44px;
   object-fit: cover;
-  margin-left: 12px;
+  margin-left: auto;
+}
+main .time-container .time-content .content .interact-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  padding: 6px 15px;
+}
+main .time-container .time-content .content .interact-message .message {
+  font-size: 14px;
+  color: #262626;
+  font-weight: 600;
+}
+main .time-container .time-content .content .interact-follow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: #3797ef;
+  border-radius: 4px;
+  padding: 6px 0px;
+  width: 90px;
+}
+main .time-container .time-content .content .interact-follow .follow {
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+}
+main .time-container .time-content .action {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  padding: 13px 58px;
+}
+main .time-container .time-content .action .like-action {
+  width: 12px;
+  height: 10px;
+  margin-right: 14px;
+}
+main .time-container .time-content .action .reply-action {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 11px;
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=like.css.map */

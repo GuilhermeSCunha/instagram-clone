@@ -50,6 +50,8 @@ main {
             .content {
                 @include simple-flex (flex-start, center, row);
                 height: 60px;
+                max-width: 100%;
+                min-width: 343px;
                 .profile-picture {
                     @include box-round (44px);
                     object-fit: cover;
@@ -59,7 +61,7 @@ main {
                 .content-description {
                     color: $text-color;
                     font-size: 13px;
-                    width: 230px;
+                    max-width: 230px;
                     .spotlight-text {
                         font-weight: 600;
                     }
@@ -68,15 +70,61 @@ main {
                         color: $text-secondary-color;
                     }
 
+                    .mention {
+                        color: rgb(0, 50, 124);
+                    }
+
                 }
 
                 .post-picture {
                     width: 44px;
                     height: 44px;
                     object-fit: cover;
-                    margin-left: 12px;
+                    margin-left: auto;
                 }
 
+                .interact-message {
+                    @include simple-flex (center, center, row);
+                    border: 1px solid $text-secondary-color;
+                    border-radius: 4px;
+                    padding: 6px 15px;
+                    .message {
+                        font-size: 14px;
+                        color: $text-color;
+                        font-weight: 600;
+                    }
+                }
+
+                .interact-follow {
+                    @include simple-flex (center, center, row);
+                    background-color: $highlight-color;
+                    border-radius: 4px;
+                    padding: 6px 0px;
+                    width: 90px;
+                    .follow {
+                        font-size: 14px;
+                        color: white;
+                        font-weight: 600;
+                    }
+                }
+
+            }
+
+            .action {
+                @include simple-flex (flex-start, center, row);
+                width: 100%;
+                padding: 13px 58px;
+                .like-action {
+                    width: 12px;
+                    height: 10px;
+                    margin-right: 14px;
+                }
+
+                .reply-action {
+                    color: $text-secondary-color;
+                    font-size: 11px;
+                    font-weight: 600;
+                }
             }
         }
     }
