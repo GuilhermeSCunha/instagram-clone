@@ -58,6 +58,27 @@ main {
                     margin-right: 12px;
                 }
 
+                .profile-pictures-mix {
+                    width: 44px;
+                    height: 44px;
+                    margin-right: 12px;
+                    @include simple-flex (flex-end, flex-end, row);
+
+                    .front-profile-picture {
+                        @include box-round (32px);
+                        border: 2px solid $background-primary;
+                        z-index: 2;
+                    }
+
+                    .back-profile-picture {
+                        @include box-round (32px);
+                        position: relative;
+                        top: -12px;
+                        left: 24px;
+                    }
+
+                }
+
                 .content-description {
                     color: $text-color;
                     font-size: 13px;
@@ -112,7 +133,6 @@ main {
 
             .action {
                 @include simple-flex (flex-start, center, row);
-                width: 100%;
                 padding: 13px 58px;
                 .like-action {
                     width: 12px;

@@ -119,6 +119,30 @@ main .time-container .time-content .content .profile-picture {
   object-fit: cover;
   margin-right: 12px;
 }
+main .time-container .time-content .content .profile-pictures-mix {
+  width: 44px;
+  height: 44px;
+  margin-right: 12px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: row;
+}
+main .time-container .time-content .content .profile-pictures-mix .front-profile-picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #fafafa;
+  z-index: 2;
+}
+main .time-container .time-content .content .profile-pictures-mix .back-profile-picture {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: relative;
+  top: -12px;
+  left: 24px;
+}
 main .time-container .time-content .content .content-description {
   color: #262626;
   font-size: 13px;
@@ -173,7 +197,6 @@ main .time-container .time-content .action {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  width: 100%;
   padding: 13px 58px;
 }
 main .time-container .time-content .action .like-action {
