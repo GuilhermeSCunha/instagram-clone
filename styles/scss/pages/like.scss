@@ -1,0 +1,83 @@
+@import "../styles.scss";
+
+header {
+    background-color: $background-secondary;
+    @include simple-flex (center, center, row);
+    .you {
+        @include simple-flex (center, center, row);
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-color;
+        width: 180px;
+        height: 44px;
+        border-bottom: 1px solid $text-color;
+    }
+
+    .following {
+        @include simple-flex (center, center, row);
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-secondary-color;
+        width: 180px;
+        height: 44px;
+    }
+}
+
+main {
+    background-color: $background-primary;
+
+    .time-container {
+        padding: 0 16px;
+        border-top: 1px solid #0000001a;
+
+        .time-content {
+            min-height: 48px;
+            @include simple-flex (center, flex-start, column);
+
+            .follow-requests{
+                font-size: 15px;
+                color: $text-color;
+            }
+
+            .time-indication {
+                @include simple-flex (flex-start, center, row);
+                font-size: 15px;
+                color: $text-color;
+                font-weight: 600;
+                height: 46px;
+            }
+
+            .content {
+                @include simple-flex (flex-start, center, row);
+                height: 60px;
+                .profile-picture {
+                    @include box-round (44px);
+                    object-fit: cover;
+                    margin-right: 12px;
+                }
+
+                .content-description {
+                    color: $text-color;
+                    font-size: 13px;
+                    width: 230px;
+                    .spotlight-text {
+                        font-weight: 600;
+                    }
+
+                    .time {
+                        color: $text-secondary-color;
+                    }
+
+                }
+
+                .post-picture {
+                    width: 44px;
+                    height: 44px;
+                    object-fit: cover;
+                    margin-left: 12px;
+                }
+
+            }
+        }
+    }
+}
