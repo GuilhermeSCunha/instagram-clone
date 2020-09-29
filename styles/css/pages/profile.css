@@ -182,4 +182,54 @@ main .categories .category-container .category-picture {
   margin-bottom: 3px;
 }
 
+.gallery-container {
+  background-color: #fafafa;
+}
+.gallery-container .gallery-header {
+  border-top: 1px solid #0000001a;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.gallery-container .gallery-header .photos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 186px;
+  height: 44px;
+  border-bottom: 1px solid #262626;
+}
+.gallery-container .gallery-header .photos-container .photos {
+  width: 22.5px;
+  height: 22.5px;
+}
+.gallery-container .gallery-header .photos-of-you-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 186px;
+  height: 44px;
+}
+.gallery-container .gallery-header .photos-of-you-container .photos-of-you {
+  width: 23.5px;
+  height: 23.5px;
+}
+.gallery-container .galery {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.gallery-container .galery .picture {
+  width: 123px;
+  height: 123px;
+  margin: 0.5px;
+  object-fit: cover;
+}
+
 /*# sourceMappingURL=profile.css.map */

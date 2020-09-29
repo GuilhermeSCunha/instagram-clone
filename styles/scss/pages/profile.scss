@@ -129,3 +129,51 @@ main {
         }
     }
 }
+
+.gallery-container {
+    background-color: $background-primary;
+    .gallery-header {
+        border-top: 1px solid #0000001a;
+        background-color: $background-secondary;
+        @include simple-flex (center, center, row);
+
+        .photos-container {
+            @include simple-flex (center, center, row);
+            width: 186px;
+            height: 44px;
+            border-bottom: 1px solid $text-color;
+
+            .photos {
+                width: 22.5px;
+                height: 22.5px;
+            }
+
+        }
+
+        .photos-of-you-container {
+            @include simple-flex (center, center, row);
+            width: 186px;
+            height: 44px;
+
+            .photos-of-you {
+                width: 23.5px;
+                height: 23.5px;
+            }
+
+        }
+
+    }
+
+    .galery {
+        @include simple-flex (flex-start, center, row);
+        flex-wrap: wrap;
+
+        .picture {
+            width: 123px;
+            height: 123px;
+            margin: 0.5px;
+            object-fit: cover;
+        }
+    }
+
+}
