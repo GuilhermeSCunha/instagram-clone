@@ -92,11 +92,94 @@ main .profile-information .infos {
   margin: 0 17px;
 }
 main .profile-information .infos .number {
+  color: #262626;
   font-size: 16px;
   font-weight: 600;
 }
 main .profile-information .infos .info-description {
+  color: #262626;
   font-size: 13px;
+}
+main .profile-description {
+  padding: 12px 16px;
+}
+main .profile-description .author-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 3px;
+}
+main .profile-description .description {
+  font-size: 12px;
+  color: #262626;
+  margin: 3px 0;
+}
+main .profile-description .description .mention {
+  color: #00327c;
+}
+main .edit-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin: 3px 0 15px;
+}
+main .edit-profile-container .edit-profile {
+  cursor: pointer;
+  background-color: #ffffff;
+  width: 343px;
+  height: 29px;
+  border-radius: 6px;
+  border: 1px solid rgba(60, 60, 67, 0.18);
+  font-size: 13px;
+  font-weight: 600;
+  color: #262626;
+}
+main .edit-profile-container .edit-profile:focus {
+  outline: none;
+}
+main .categories {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin: 0 14px;
+  padding-bottom: 15px;
+}
+main .categories .category-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 18px;
+}
+main .categories .category-container .new {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid #C7C7CC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 3px;
+}
+main .categories .category-container .new .plus-icon {
+  width: 18px;
+  height: 18px;
+}
+main .categories .category-container .cetegory-description {
+  font-size: 12px;
+  color: #262626;
+}
+main .categories .category-container .category-picture {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.4);
+  margin-bottom: 3px;
 }
 
 /*# sourceMappingURL=profile.css.map */

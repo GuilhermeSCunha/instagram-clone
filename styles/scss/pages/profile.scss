@@ -40,11 +40,13 @@ main {
             @include simple-flex (center, center, column);
             margin: 0 17px;
             .number {
+                color: $text-color;
                 font-size: 16px;
                 font-weight: 600;
             }
 
             .info-description {
+                color: $text-color;
                 font-size: 13px;
 
             }
@@ -52,6 +54,78 @@ main {
     }
 
     .profile-description {
+        padding: 12px 16px;
 
+        .author-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: $text-color;
+            margin-bottom: 3px;
+        }
+
+        .description {
+            font-size: 12px;
+            color: $text-color;
+            margin: 3px 0;
+            .mention {
+                color:  rgb(0, 50, 124);
+            }
+        }
+    }
+
+    .edit-profile-container {
+        @include simple-flex (center, center, row);
+        width: 100%;
+        margin: 3px 0 15px;
+
+        .edit-profile {
+            cursor: pointer;
+            background-color: #ffffff;
+            width: 343px;
+            height: 29px;
+            border-radius: 6px;
+            border: 1px solid rgba(60, 60, 67, 0.18);
+            font-size: 13px;
+            font-weight: 600;
+            color: $text-color;
+
+            &:focus {
+                outline: none;
+            }            
+        }
+    }
+
+    .categories {
+        @include simple-flex (flex-start, center, row);
+        margin: 0 14px;
+        padding-bottom: 15px;
+
+        .category-container {
+            @include simple-flex (center, center, column);
+            margin-right: 18px;
+            .new {
+                @include box-round (64px);
+                border: 1px solid #C7C7CC;
+                @include simple-flex (center, center, row);
+                margin-bottom: 3px;
+
+                .plus-icon {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+
+            .cetegory-description {
+                font-size: 12px;
+                color: $text-color;
+            }
+
+            .category-picture {
+                @include box-round (64px);
+                border: 3px solid white;
+                box-shadow: 1px 1px 3px 1px $text-secondary-color;
+                margin-bottom: 3px;
+            }
+        }
     }
 }
