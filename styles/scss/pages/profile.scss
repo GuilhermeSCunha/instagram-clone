@@ -1,0 +1,57 @@
+@import "../styles.scss";
+
+header { 
+    @include simple-flex (center, center, row);
+    background-color: $background-secondary;
+    padding: 11px 0;
+
+    .padlock {
+        width: 8.75px;
+        height: 11.75px;
+    }
+
+    .profile-id {
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-color;
+        margin: 0 6px;
+    }
+
+    .down-arrow {
+        width: 10.7px;
+        height: 6.2px;
+    }
+}
+
+main {
+    background-color: $background-secondary;
+
+    .profile-information {
+        @include simple-flex (flex-start, center, row);
+
+        .profile-picture {
+            @include box-round (86px);
+            margin: 0 20px 0 16px;
+            border: 5px solid white;
+            box-shadow: 1px 1px 5px 1px $text-secondary-color;
+        }
+            
+        .infos {
+            @include simple-flex (center, center, column);
+            margin: 0 17px;
+            .number {
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            .info-description {
+                font-size: 13px;
+
+            }
+        }
+    }
+
+    .profile-description {
+
+    }
+}
