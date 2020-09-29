@@ -1,9 +1,76 @@
 @import "../styles.scss";
 
+#menu-switch {
+   display: none;
+}
+
+#menu-switch:checked + .menu {
+    transform: translateX(124px);
+}
+
+.menu {
+    width: 251px;
+    height: 100%;
+    background-color: $background-primary;
+    position: fixed;
+    transform: translateX(376px);
+    transition: all .4s ease-in-out;
+    @include simple-flex (flex-start, flex-start, column);
+
+    .menu-icon {
+        width: 20.5px;
+        height: 17.5px;
+        position: absolute;
+        left: -38px;
+        top: 11px;
+    }
+
+    .id {
+        color: $text-color;
+        font-size: 15px;
+        margin: 15px;
+    }
+
+    .menu-list-container {
+        @include simple-flex (flex-start, flex-start, row);
+
+        .menu-list {
+            color: $text-color;
+            font-size: 15px;
+            margin: 12px 0 12px 6px;
+        }
+
+        .icon-inside-menu {
+            width: 23px;
+            max-height: 20px;
+            margin: 12px 6px 12px 15px;
+        }
+
+    }
+
+    .settings-container {
+        @include simple-flex (flex-start, flex-start, row);
+        position: absolute;
+        bottom: 50px;
+        .menu-list {
+            color: $text-color;
+            font-size: 15px;
+            margin: 12px 0 12px 6px;
+        }
+
+        .icon-inside-menu {
+            width: 23px;
+            max-height: 20px;
+            margin: 12px 6px 12px 15px;
+        }
+    }
+}
+
 header { 
     @include simple-flex (center, center, row);
     background-color: $background-secondary;
     padding: 11px 0;
+    width: 100%;
 
     .padlock {
         width: 8.75px;
@@ -21,6 +88,7 @@ header {
         width: 10.7px;
         height: 6.2px;
     }
+
 }
 
 main {

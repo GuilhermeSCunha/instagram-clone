@@ -44,6 +44,73 @@ body {
   width: 22px;
 }
 
+#menu-switch {
+  display: none;
+}
+
+#menu-switch:checked + .menu {
+  transform: translateX(124px);
+}
+
+.menu {
+  width: 251px;
+  height: 100%;
+  background-color: #fafafa;
+  position: fixed;
+  transform: translateX(376px);
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.menu .menu-icon {
+  width: 20.5px;
+  height: 17.5px;
+  position: absolute;
+  left: -38px;
+  top: 11px;
+}
+.menu .id {
+  color: #262626;
+  font-size: 15px;
+  margin: 15px;
+}
+.menu .menu-list-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.menu .menu-list-container .menu-list {
+  color: #262626;
+  font-size: 15px;
+  margin: 12px 0 12px 6px;
+}
+.menu .menu-list-container .icon-inside-menu {
+  width: 23px;
+  max-height: 20px;
+  margin: 12px 6px 12px 15px;
+}
+.menu .settings-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  position: absolute;
+  bottom: 50px;
+}
+.menu .settings-container .menu-list {
+  color: #262626;
+  font-size: 15px;
+  margin: 12px 0 12px 6px;
+}
+.menu .settings-container .icon-inside-menu {
+  width: 23px;
+  max-height: 20px;
+  margin: 12px 6px 12px 15px;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -51,6 +118,7 @@ header {
   flex-direction: row;
   background-color: #f2f2f2;
   padding: 11px 0;
+  width: 100%;
 }
 header .padlock {
   width: 8.75px;
