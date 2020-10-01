@@ -5,15 +5,15 @@
 }
 
 #menu-switch:checked + .menu {
-    transform: translateX(124px);
+    transform: translateX(33vw);
 }
 
 .menu {
-    width: 251px;
+    width: 67%;
     height: 100%;
     background-color: $background-primary;
     position: fixed;
-    transform: translateX(376px);
+    transform: translateX(101vw);
     transition: all .4s ease-in-out;
     @include simple-flex (flex-start, flex-start, column);
 
@@ -233,7 +233,7 @@ main {
     }
 
     .galery {
-        @include simple-flex (flex-start, center, row);
+        @include simple-flex (center, center, row);
         flex-wrap: wrap;
 
         .picture {
