@@ -38,6 +38,14 @@ body {
   padding: 10px 0;
   border-top: 1px solid #e2e2e2;
 }
+@media (min-width: 768px) {
+  .tab-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+}
 .tab-bar .action-icon {
   width: 22px;
 }

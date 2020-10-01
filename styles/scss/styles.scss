@@ -30,6 +30,10 @@ body {
   padding: 10px 0;
   border-top: 1px solid #e2e2e2;
 
+  @media ($desktop-breakpoint) {
+    @include simple-flex(space-around, center, row);
+  }
+
   .action-icon {
     @extend %action-icons;
     width: 22px;
