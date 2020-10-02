@@ -17,6 +17,10 @@
     transition: all .4s ease-in-out;
     @include simple-flex (flex-start, flex-start, column);
 
+    @media ($desktop-breakpoint) {
+        display: none;
+    }
+
     .menu-icon {
         width: 20.5px;
         height: 17.5px;
@@ -72,9 +76,66 @@ header {
     padding: 11px 0;
     width: 100%;
 
+    .big-screen-header {
+        width: 100%;
+        max-width: 975px;
+        display: none;
+
+        @media ($desktop-breakpoint) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 105px;
+            height: auto;
+        }
+        
+        .action-icon {
+            @extend %action-icons;
+        }
+
+        .search-container {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: #fafafa;
+            border: solid 1px #dbdbdb;
+            padding: 5px 80px;
+        
+            @media ($desktop-breakpoint) {
+              display: flex;
+            }
+        
+            .search-icon {
+              width: 10px;
+              height: 10px;
+              margin-right: 6px;
+            }
+        
+            .search-input {
+              width: 70px;
+              background-color: transparent;
+              border: none;
+              outline: none;
+        
+              &::placeholder {
+                text-align: center;
+              }
+            }
+          }
+
+          
+    }
+
     .padlock {
         width: 8.75px;
         height: 11.75px;
+
+        @media ($desktop-breakpoint) {
+            display: none;
+        }
     }
 
     .profile-id {
@@ -82,117 +143,206 @@ header {
         font-weight: 600;
         color: $text-color;
         margin: 0 6px;
+
+        @media ($desktop-breakpoint) {
+            display: none;
+        }
     }
 
     .down-arrow {
         width: 10.7px;
         height: 6.2px;
+
+        @media ($desktop-breakpoint) {
+            display: none;
+        }
     }
 
 }
 
 main {
     background-color: $background-secondary;
-
-    .profile-information {
-        @include simple-flex (flex-start, center, row);
-
-        .profile-picture {
-            @include box-round (86px);
-            margin: 0 20px 0 16px;
-            border: 5px solid white;
-            box-shadow: 1px 1px 5px 1px $text-secondary-color;
-        }
-            
-        .infos {
-            @include simple-flex (center, center, column);
-            margin: 0 17px;
-            .number {
-                color: $text-color;
-                font-size: 16px;
-                font-weight: 600;
-            }
-
-            .info-description {
-                color: $text-color;
-                font-size: 13px;
-
-            }
-        }
+    @media ($desktop-breakpoint) {
+        @include simple-flex (center, center, column);
+        background-color: $background-primary;
     }
 
-    .profile-description {
-        padding: 12px 16px;
-
-        .author-name {
-            font-size: 12px;
-            font-weight: 600;
-            color: $text-color;
-            margin-bottom: 3px;
-        }
-
-        .description {
-            font-size: 12px;
-            color: $text-color;
-            margin: 3px 0;
-            .mention {
-                color:  rgb(0, 50, 124);
-            }
-        }
-    }
-
-    .edit-profile-container {
-        @include simple-flex (center, center, row);
+    .content-container{
         width: 100%;
-        margin: 3px 0 15px;
-
-        .edit-profile {
-            cursor: pointer;
-            background-color: #ffffff;
-            width: 343px;
-            height: 29px;
-            border-radius: 6px;
-            border: 1px solid rgba(60, 60, 67, 0.18);
-            font-size: 13px;
-            font-weight: 600;
-            color: $text-color;
-
-            &:focus {
-                outline: none;
-            }            
+        max-width: 975px;
+        @media ($desktop-breakpoint) {
+            @include simple-flex (center, flex-start, column);
         }
-    }
 
-    .categories {
-        @include simple-flex (flex-start, center, row);
-        margin: 0 14px;
-        padding-bottom: 15px;
+        .profile-information {
+            @include simple-flex (flex-start, center, row);
 
-        .category-container {
-            @include simple-flex (center, center, column);
-            margin-right: 18px;
-            .new {
-                @include box-round (64px);
-                border: 1px solid #C7C7CC;
-                @include simple-flex (center, center, row);
-                margin-bottom: 3px;
+            .profile-picture {
+                @include box-round (86px);
+                margin: 0 20px 0 16px;
+                border: 5px solid white;
+                box-shadow: 1px 1px 5px 1px $text-secondary-color;
 
-                .plus-icon {
-                    width: 18px;
-                    height: 18px;
+                @media (max-width: 374px) {
+                    margin-right: 10px;
+                }
+
+                @media ($desktop-breakpoint) {
+                    @include box-round (150px);
+                    margin-top: 10px;
                 }
             }
 
-            .cetegory-description {
+            .info-settings-container {
+                @include simple-flex (center, center, column);
+
+                .big-screen-settings {
+                    display: none;
+                    @media ($desktop-breakpoint) {
+                        @include simple-flex (center, center, row);
+                    }
+
+
+                    .author-id {
+                        margin: 10px 17px;
+                        font-size: large;
+                        color: $text-color;
+
+                    }
+
+                    .edit-profile {
+                        margin: 10px 17px;
+                        cursor: pointer;
+                        background-color: #ffffff;
+                        width: 93px;
+                        height: 30px;
+                        border-radius: 6px;
+                        border: 1px solid rgba(60, 60, 67, 0.18);
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: $text-color;
+                    }
+
+                    .edit-prifle-img {
+                        margin: 10px 0;
+                        width: 23px;
+                        max-height: 20px;
+
+                    }
+                }
+                
+                .info-container {
+                    @include simple-flex (center, center, row);
+
+                    .infos {
+                        @include simple-flex (center, center, column);
+                        margin: 0 17px;
+                        
+                        @media (max-width: 374px) {
+                            margin: 0 10px;
+                        }
+
+                        .number {
+                            color: $text-color;
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+
+                        .info-description {
+                            color: $text-color;
+                            font-size: 13px;
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .profile-description {
+            padding: 12px 16px;
+
+            .author-name {
                 font-size: 12px;
+                font-weight: 600;
                 color: $text-color;
+                margin-bottom: 3px;
             }
 
-            .category-picture {
-                @include box-round (64px);
-                border: 3px solid white;
-                box-shadow: 1px 1px 3px 1px $text-secondary-color;
-                margin-bottom: 3px;
+            .description {
+                font-size: 12px;
+                color: $text-color;
+                margin: 3px 0;
+                .mention {
+                    color:  rgb(0, 50, 124);
+                }
+            }
+        }
+
+        .edit-profile-container {
+            @include simple-flex (center, center, row);
+            width: 100%;
+            margin: 3px 0 15px;
+
+            .edit-profile {
+                cursor: pointer;
+                background-color: #ffffff;
+                width: 343px;
+                height: 29px;
+                border-radius: 6px;
+                border: 1px solid rgba(60, 60, 67, 0.18);
+                font-size: 13px;
+                font-weight: 600;
+                color: $text-color;
+
+                @media ($desktop-breakpoint) {
+                    display: none;
+                }
+
+                &:focus {
+                    outline: none;
+                }            
+            }
+        }
+
+        .categories {
+            @include simple-flex (flex-start, center, row);
+            margin: 0 14px;
+            padding-bottom: 15px;
+
+            .category-container {
+                @include simple-flex (center, center, column);
+                margin-right: 18px;
+                .new {
+                    @include box-round (64px);
+                    border: 1px solid #C7C7CC;
+                    @include simple-flex (center, center, row);
+                    margin-bottom: 3px;
+                
+                @media (max-width: 374px) {
+                    @include box-round (48px);
+                }
+
+                    .plus-icon {
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+
+                .cetegory-description {
+                    font-size: 12px;
+                    color: $text-color;
+                }
+
+                .category-picture {
+                    @include box-round (64px);
+                    border: 3px solid white;
+                    box-shadow: 1px 1px 3px 1px $text-secondary-color;
+                    margin-bottom: 3px;
+
+                    @media (max-width: 374px) {
+                        @include box-round (48px);
+                    }                
+                }
             }
         }
     }
@@ -203,7 +353,13 @@ main {
     .gallery-header {
         border-top: 1px solid #0000001a;
         background-color: $background-secondary;
+        max-width: 975px;
+        margin: 0 auto;
         @include simple-flex (center, center, row);
+
+        @media ($desktop-breakpoint) {
+            background-color: $background-primary;
+        }
 
         .photos-container {
             @include simple-flex (center, center, row);
@@ -235,12 +391,18 @@ main {
     .galery {
         @include simple-flex (center, center, row);
         flex-wrap: wrap;
+        max-width: 975px;
+        margin: 0 auto;
 
         .picture {
             width: 123px;
             height: 123px;
             margin: 0.5px;
             object-fit: cover;
+            @media ($desktop-breakpoint) {
+                width: 200px;
+                height: auto;
+            }
         }
     }
 
