@@ -13,6 +13,59 @@ body {
   background-color: $background-primary;
 }
 
+.big-screen-header {
+  width: 100%;
+  max-width: 975px;
+  display: none;
+
+  @media ($desktop-breakpoint) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .logo-img {
+      width: 105px;
+      height: auto;
+  }
+  
+  .action-icon {
+      @extend %action-icons;
+  }
+
+  .search-container {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: #fafafa;
+      border: solid 1px #dbdbdb;
+      padding: 5px 80px;
+  
+      @media ($desktop-breakpoint) {
+        display: flex;
+      }
+  
+      .search-icon {
+        width: 10px;
+        height: 10px;
+        margin-right: 6px;
+      }
+  
+      .search-input {
+        width: 70px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+  
+        &::placeholder {
+          text-align: center;
+        }
+      }
+    }
+
+    
+}
+
 %action-icons {
   width: 24px;
   height: auto;

@@ -2,25 +2,33 @@
 
 header {
     background-color: $background-secondary;
-    @include simple-flex (center, center, row);
-    .you {
-        @include simple-flex (center, center, row);
-        font-size: 16px;
-        font-weight: 600;
-        color: $text-color;
-        width: 180px;
-        height: 44px;
-        border-bottom: 1px solid $text-color;
-    }
+    @include simple-flex (center, center, column);
+    padding-top: 10px;
 
-    .following {
+    .following-you-container {
         @include simple-flex (center, center, row);
-        font-size: 16px;
-        font-weight: 600;
-        color: $text-secondary-color;
-        width: 180px;
-        height: 44px;
-    }
+        width: 100%;
+        max-width: 975px;
+
+        .you {
+            @include simple-flex (center, center, row);
+            font-size: 16px;
+            font-weight: 600;
+            color: $text-color;
+            width: 50%;
+            height: 44px;
+            border-bottom: 1px solid $text-color;
+        }
+
+        .following {
+            @include simple-flex (center, center, row);
+            font-size: 16px;
+            font-weight: 600;
+            color: $text-secondary-color;
+            width: 50%;
+            height: 44px;
+        }
+    }   
 }
 
 main {
@@ -29,6 +37,8 @@ main {
     .time-container {
         padding: 0 16px;
         border-top: 1px solid #0000001a;
+        box-sizing: border-box;
+        width: 100%;
 
         .time-content {
             min-height: 48px;
@@ -37,6 +47,10 @@ main {
             .follow-requests{
                 font-size: 15px;
                 color: $text-color;
+
+                @media ($desktop-breakpoint) {
+                    margin: 0 auto;
+                }
             }
 
             .time-indication {
@@ -45,56 +59,73 @@ main {
                 color: $text-color;
                 font-weight: 600;
                 height: 46px;
+
+                
+                @media ($desktop-breakpoint) {
+                    margin: 0 auto;
+                }
+
             }
 
             .content {
                 @include simple-flex (flex-start, center, row);
-                height: 60px;
-                max-width: 100%;
-                min-width: 343px;
-                .profile-picture {
-                    @include box-round (44px);
-                    object-fit: cover;
-                    margin-right: 12px;
+                min-height: 60px;
+                width: 100%;
+                max-width: 375px;
+                margin: 0 auto;
+
+                @media ($desktop-breakpoint) {
+                    @include simple-flex (center, flex-start, column);
+                    margin-top: 10px;
                 }
 
-                .profile-pictures-mix {
-                    width: 44px;
-                    height: 44px;
-                    margin-right: 12px;
-                    @include simple-flex (flex-end, flex-end, row);
+                .org {
+                    @include simple-flex (flex-start, center, row);
 
-                    .front-profile-picture {
-                        @include box-round (32px);
-                        border: 2px solid $background-primary;
-                        z-index: 2;
+                    .profile-picture {
+                        @include box-round (44px);
+                        object-fit: cover;
+                        margin-right: 12px;
                     }
 
-                    .back-profile-picture {
-                        @include box-round (32px);
-                        position: relative;
-                        top: -12px;
-                        left: 24px;
+                    .profile-pictures-mix {
+                        width: 44px;
+                        height: 44px;
+                        margin-right: 12px;
+                        @include simple-flex (flex-end, flex-end, row);
+
+                        .front-profile-picture {
+                            @include box-round (32px);
+                            border: 2px solid $background-primary;
+                            z-index: 2;
+                        }
+
+                        .back-profile-picture {
+                            @include box-round (32px);
+                            position: relative;
+                            top: -12px;
+                            left: 24px;
+                        }
+
                     }
 
-                }
+                    .content-description {
+                        color: $text-color;
+                        font-size: 13px;
+                        max-width: 230px;
+                        .spotlight-text {
+                            font-weight: 600;
+                        }
 
-                .content-description {
-                    color: $text-color;
-                    font-size: 13px;
-                    max-width: 230px;
-                    .spotlight-text {
-                        font-weight: 600;
+                        .time {
+                            color: $text-secondary-color;
+                        }
+
+                        .mention {
+                            color: rgb(0, 50, 124);
+                        }
+
                     }
-
-                    .time {
-                        color: $text-secondary-color;
-                    }
-
-                    .mention {
-                        color: rgb(0, 50, 124);
-                    }
-
                 }
 
                 .post-picture {
@@ -102,6 +133,13 @@ main {
                     height: 44px;
                     object-fit: cover;
                     margin-left: auto;
+
+                    @media ($desktop-breakpoint) {
+                        width: 500px;
+                        height: auto;
+                        margin-left: 0;
+                        margin-top: 10px;
+                    }
                 }
 
                 .interact-message {
@@ -109,6 +147,7 @@ main {
                     border: 1px solid $text-secondary-color;
                     border-radius: 4px;
                     padding: 6px 15px;
+                    margin-left: auto;
                     .message {
                         font-size: 14px;
                         color: $text-color;
@@ -122,6 +161,7 @@ main {
                     border-radius: 4px;
                     padding: 6px 0px;
                     width: 90px;
+                    margin-left: auto;
                     .follow {
                         font-size: 14px;
                         color: white;
@@ -134,16 +174,31 @@ main {
             .action {
                 @include simple-flex (flex-start, center, row);
                 padding: 13px 58px;
+
+                @media ($desktop-breakpoint) {
+                    margin: 0 auto;
+                }
+
                 .like-action {
                     width: 12px;
                     height: 10px;
                     margin-right: 14px;
+
+                    @media ($desktop-breakpoint) {
+                        width: 20px;
+                        height: auto;
+                    }
                 }
 
                 .reply-action {
                     color: $text-secondary-color;
                     font-size: 11px;
                     font-weight: 600;
+
+                    @media ($desktop-breakpoint) {
+                        width: 30px;
+                        height: auto;
+                    }
                 }
             }
         }

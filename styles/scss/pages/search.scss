@@ -121,6 +121,10 @@ header {
     &::-webkit-scrollbar {
         height: 6px;
         display: none;
+
+        @media ($desktop-breakpoint) {
+            display: block;
+        }
       }
   
       /* Track */
@@ -164,8 +168,9 @@ header {
 
 main {
     @include simple-flex (center, flex-start, row);
+    margin: 0 auto;
     width: 100%;
-    max-width: 100%;
+    max-width: 975px;
     background-color: $background-primary;
     flex-wrap: wrap;
     object-fit: cover;
@@ -176,7 +181,7 @@ main {
         height: 119px;
         object-fit: cover;
         @media ($desktop-breakpoint) {
-            width: 300px;
+            width: 200px;
             height: auto;
         }
     }

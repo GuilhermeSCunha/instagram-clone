@@ -19,7 +19,51 @@ body {
   background-color: #fafafa;
 }
 
-.tab-bar .action-icon {
+.big-screen-header {
+  width: 100%;
+  max-width: 975px;
+  display: none;
+}
+@media (min-width: 768px) {
+  .big-screen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.big-screen-header .logo-img {
+  width: 105px;
+  height: auto;
+}
+.big-screen-header .search-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+  border: solid 1px #dbdbdb;
+  padding: 5px 80px;
+}
+@media (min-width: 768px) {
+  .big-screen-header .search-container {
+    display: flex;
+  }
+}
+.big-screen-header .search-container .search-icon {
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+}
+.big-screen-header .search-container .search-input {
+  width: 70px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.big-screen-header .search-container .search-input::placeholder {
+  text-align: center;
+}
+
+.tab-bar .action-icon, .big-screen-header .action-icon {
   width: 24px;
   height: auto;
   cursor: pointer;
@@ -55,9 +99,18 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
+  padding-top: 10px;
 }
-header .you {
+header .following-you-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  max-width: 975px;
+}
+header .following-you-container .you {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,11 +118,11 @@ header .you {
   font-size: 16px;
   font-weight: 600;
   color: #262626;
-  width: 180px;
+  width: 50%;
   height: 44px;
   border-bottom: 1px solid #262626;
 }
-header .following {
+header .following-you-container .following {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +130,7 @@ header .following {
   font-size: 16px;
   font-weight: 600;
   color: rgba(0, 0, 0, 0.4);
-  width: 180px;
+  width: 50%;
   height: 44px;
 }
 
@@ -87,6 +140,8 @@ main {
 main .time-container {
   padding: 0 16px;
   border-top: 1px solid #0000001a;
+  box-sizing: border-box;
+  width: 100%;
 }
 main .time-container .time-content {
   min-height: 48px;
@@ -99,6 +154,11 @@ main .time-container .time-content .follow-requests {
   font-size: 15px;
   color: #262626;
 }
+@media (min-width: 768px) {
+  main .time-container .time-content .follow-requests {
+    margin: 0 auto;
+  }
+}
 main .time-container .time-content .time-indication {
   display: flex;
   justify-content: flex-start;
@@ -109,23 +169,44 @@ main .time-container .time-content .time-indication {
   font-weight: 600;
   height: 46px;
 }
+@media (min-width: 768px) {
+  main .time-container .time-content .time-indication {
+    margin: 0 auto;
+  }
+}
 main .time-container .time-content .content {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  height: 60px;
-  max-width: 100%;
-  min-width: 343px;
+  min-height: 60px;
+  width: 100%;
+  max-width: 375px;
+  margin: 0 auto;
 }
-main .time-container .time-content .content .profile-picture {
+@media (min-width: 768px) {
+  main .time-container .time-content .content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+}
+main .time-container .time-content .content .org {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+main .time-container .time-content .content .org .profile-picture {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 12px;
 }
-main .time-container .time-content .content .profile-pictures-mix {
+main .time-container .time-content .content .org .profile-pictures-mix {
   width: 44px;
   height: 44px;
   margin-right: 12px;
@@ -134,14 +215,14 @@ main .time-container .time-content .content .profile-pictures-mix {
   align-items: flex-end;
   flex-direction: row;
 }
-main .time-container .time-content .content .profile-pictures-mix .front-profile-picture {
+main .time-container .time-content .content .org .profile-pictures-mix .front-profile-picture {
   width: 32px;
   height: 32px;
   border-radius: 50%;
   border: 2px solid #fafafa;
   z-index: 2;
 }
-main .time-container .time-content .content .profile-pictures-mix .back-profile-picture {
+main .time-container .time-content .content .org .profile-pictures-mix .back-profile-picture {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -149,18 +230,18 @@ main .time-container .time-content .content .profile-pictures-mix .back-profile-
   top: -12px;
   left: 24px;
 }
-main .time-container .time-content .content .content-description {
+main .time-container .time-content .content .org .content-description {
   color: #262626;
   font-size: 13px;
   max-width: 230px;
 }
-main .time-container .time-content .content .content-description .spotlight-text {
+main .time-container .time-content .content .org .content-description .spotlight-text {
   font-weight: 600;
 }
-main .time-container .time-content .content .content-description .time {
+main .time-container .time-content .content .org .content-description .time {
   color: rgba(0, 0, 0, 0.4);
 }
-main .time-container .time-content .content .content-description .mention {
+main .time-container .time-content .content .org .content-description .mention {
   color: #00327c;
 }
 main .time-container .time-content .content .post-picture {
@@ -168,6 +249,14 @@ main .time-container .time-content .content .post-picture {
   height: 44px;
   object-fit: cover;
   margin-left: auto;
+}
+@media (min-width: 768px) {
+  main .time-container .time-content .content .post-picture {
+    width: 500px;
+    height: auto;
+    margin-left: 0;
+    margin-top: 10px;
+  }
 }
 main .time-container .time-content .content .interact-message {
   display: flex;
@@ -177,6 +266,7 @@ main .time-container .time-content .content .interact-message {
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 4px;
   padding: 6px 15px;
+  margin-left: auto;
 }
 main .time-container .time-content .content .interact-message .message {
   font-size: 14px;
@@ -192,6 +282,7 @@ main .time-container .time-content .content .interact-follow {
   border-radius: 4px;
   padding: 6px 0px;
   width: 90px;
+  margin-left: auto;
 }
 main .time-container .time-content .content .interact-follow .follow {
   font-size: 14px;
@@ -205,15 +296,32 @@ main .time-container .time-content .action {
   flex-direction: row;
   padding: 13px 58px;
 }
+@media (min-width: 768px) {
+  main .time-container .time-content .action {
+    margin: 0 auto;
+  }
+}
 main .time-container .time-content .action .like-action {
   width: 12px;
   height: 10px;
   margin-right: 14px;
 }
+@media (min-width: 768px) {
+  main .time-container .time-content .action .like-action {
+    width: 20px;
+    height: auto;
+  }
+}
 main .time-container .time-content .action .reply-action {
   color: rgba(0, 0, 0, 0.4);
   font-size: 11px;
   font-weight: 600;
+}
+@media (min-width: 768px) {
+  main .time-container .time-content .action .reply-action {
+    width: 30px;
+    height: auto;
+  }
 }
 
 /*# sourceMappingURL=like.css.map */
